@@ -1,5 +1,6 @@
 Project by Atirek Kumar 
-Github Link: https://github.com/atirek-ak/
+
+Github Handle Link: https://github.com/atirek-ak/
 
 NOTE: This code is designed to run on Mac OS
 
@@ -16,9 +17,13 @@ brew install glew glfw glm cmake pkg-config
 
 
 Make instructions: (or directly run this script using 'bash make.sh')
+
 mkdir build
+
 cd build
+
 cmake ../
+
 make all -j 4
 
 Note - In case of Experimental Error for GLM.
