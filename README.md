@@ -1,10 +1,21 @@
-Graphics Boilerplate Code
-=========================
-This is boilerplate code for the assignments which might be helpful.
+Project by Atirek Kumar 
+Github Link: https://github.com/atirek-ak/
+
+NOTE: This code is designed to run on Mac OS
 
 Adapted From : https://github.com/sidgairo18/Graphics_Spring_19_Boilerplate.git
 
-Instructions: (or directly run this script using 'bash make.sh')
+Install Opengl: 
+You need to install the development packages of the following libraries:
+GLEW
+GLFW3
+GLM
+
+# Install homebrew
+brew install glew glfw glm cmake pkg-config
+
+
+Make instructions: (or directly run this script using 'bash make.sh')
 mkdir build
 cd build
 cmake ../
