@@ -1,52 +1,37 @@
 #include "ball.h"
 #include "main.h"
 
+//Player
 Ball::Ball(float x, float y, color_t color) {
     this->position = glm::vec3(x, y, 0);
+    //std::cout << "Ball:" << x << " " << y << std::endl;
     this->rotation = 0;
-    speed = 1;
+    speed = 0;
+    Ball::bounding_box();
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
     static const GLfloat vertex_buffer_data[] = {
-        -1.0f,-1.0f,-1.0f, // triangle 1 : begin
-        -1.0f,-1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f, // triangle 1 : end
-        1.0f, 1.0f,-1.0f, // triangle 2 : begin
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f,-1.0f, // triangle 2 : end
-        1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f,-1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f,-1.0f,
-        -1.0f, 1.0f,-1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f
-    };
+          -4.00f, -3.00f, 0.0f, // triangle 1 : begin
+          -4.00f, -2.75f, 0.0f,
+          -3.90f, -2.75f, 0.0f, 
+          -4.00f, -3.00f, 0.0f, // triangle 1 : begin
+          -3.90f, -3.00f, 0.0f,
+          -3.90f, -2.75f, 0.0f,
+          -3.85f, -3.00f, 0.0f, // triangle 1 : begin
+          -3.85f, -2.75f, 0.0f,
+          -3.75f, -2.75f, 0.0f,
+          -3.85f, -3.00f, 0.0f, // triangle 1 : begin
+          -3.75f, -3.00f, 0.0f,
+          -3.75f, -2.75f, 0.0f,
+          -4.00f, -2.75f, 0.0f, // triangle 1 : begin
+          -4.00f, -2.25f, 0.0f,
+          -3.75f, -2.25f, 0.0f,
+          -4.00f, -2.75f, 0.0f, // triangle 1 : begin
+          -3.75f, -2.75f, 0.0f,
+          -3.75f, -2.25f, 0.0f    
+     };
 
-    this->object = create3DObject(GL_TRIANGLES, 12*3, vertex_buffer_data, color, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, 6*3, vertex_buffer_data, color, GL_FILL);
 }
 
 void Ball::draw(glm::mat4 VP) {
@@ -66,8 +51,13 @@ void Ball::set_position(float x, float y) {
 }
 
 void Ball::tick() {
-    this->rotation += speed;
+    this->rotation += 0;
     // this->position.x -= speed;
     // this->position.y -= speed;
 }
 
+bounding_box_t Ball::bounding_box() {
+    bounding_box_t bbox = { this->position.x - 4.0 + 0.125f, this->position.y - 3.0 + 0.375f, 0.25f, 0.75f };
+    //std::cout << "Called" << std::endl;
+    return bbox;
+}

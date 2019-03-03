@@ -2,9 +2,10 @@
 #define MAIN_H
 
 #include <iostream>
-#include <cmath>
+#include <math.h>
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -72,14 +73,25 @@ struct bounding_box_t {
 };
 
 bool detect_collision(bounding_box_t a, bounding_box_t b);
+float calc(float a, float b, float x, float y);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
+void attract();
 
 // ---- Colors ----
 extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
+extern const color_t COLOR_BLUE;
 extern const color_t COLOR_BACKGROUND;
+extern const color_t COLOR_NAVY;
+extern const color_t COLOR_GOLD;
+extern const color_t COLOR_SKY_BLUE;
+extern const color_t COLOR_SLATE_GRAY;
+extern const color_t COLOR_YELLOW;
+extern const color_t COLOR_PURPLE;
+extern const color_t COLOR_MAGENTA;
+extern const color_t COLOR_CRIMSON;
 
 #endif
