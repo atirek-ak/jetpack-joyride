@@ -12,7 +12,7 @@ GLEW
 GLFW3
 GLM
 
-# Install homebrew
+Install homebrew
 brew install glew glfw glm cmake pkg-config
 
 
@@ -25,6 +25,10 @@ cd build
 cmake ../
 
 make all -j 4
+
+To run the game
+- Go to build directory
+- ./graphics_asgn1
 
 Note - In case of Experimental Error for GLM.
 add "#define GLM_ENABLE_EXPERIMENTAL" in the files main.h nonedit.cpp other_handlers.cpp and input.cpp, before you include glm.
