@@ -38,6 +38,10 @@ Note - In case of Experimental Error for GLM add ```#define GLM_ENABLE_EXPERIMEN
 - Score(on left) and Health(on right) displayed 
 - Throw Water Balloon
 
+## Built using
+- C++
+- OpenGL
+
 ## Author
 Atirek Kumar  
 Github Handle Link: https://github.com/atirek-ak/
