@@ -1,6 +1,5 @@
 # Jetpack Joyride
-A basic version of the popular mobile game Jetpack Joyride  
-The objective is to maximize your score  
+A basic version of the popular mobile game Jetpack Joyride    
 Designed to run to Mac OS
 
 ## Getting Started
@@ -8,10 +7,12 @@ Designed to run to Mac OS
 You need to install the development packages of the following libraries:
 * GLEW
 * GLFW3
-* GLM
+* GLM  
+
+To do so, run the command:  
 ```brew install glew glfw glm cmake pkg-config```
 
-### Make instructions: (or directly run this script using ```bash make.sh```)
+### Make instructions: (or directly run this script using  ```bash make.sh```)
 * mkdir build
 * cd build
 * cmake ../
@@ -19,7 +20,7 @@ You need to install the development packages of the following libraries:
 
 ## To run the game
 - Go to build directory
-- ```./graphics_asgn1```
+- ```./graphics_asgn1```  
 Note - In case of Experimental Error for GLM add ```#define GLM_ENABLE_EXPERIMENTAL``` in the files main.h, nonedit.cpp, other_handlers.cpp and input.cpp before you include glm.
 
 
